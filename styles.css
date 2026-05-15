@@ -1,4 +1,5 @@
-@import url('https://googleapis.com');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
 
 /* Color Palette System */
 :root {
@@ -11,6 +12,9 @@
   /* Neutral Colors */
   --white: hsl(0, 0%, 100%);
   --black: hsl(0, 0%, 7%);
+
+  /* Additional Canvas Background from Asset Image */
+  --bg-neutral: hsl(0, 0%, 96%);
 }
 
 *,
@@ -23,9 +27,11 @@
 
 body {
   font-family: 'DM Sans', sans-serif;
+  font-size: 18px;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
+  background: var(--bg-neutral);
 }
 
 .attribution {
