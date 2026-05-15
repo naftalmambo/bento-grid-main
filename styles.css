@@ -63,7 +63,7 @@ main {
 .card {
   background-color: var(--white);
   border-radius: 0.6rem;
-  padding: 1.5rem;
+  padding: 18px;
   width: 100%;
 }
 
@@ -74,7 +74,7 @@ main {
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  padding: 2.5rem 3rem
+  padding: 2.5rem 3rem;
 }
 
 .card-ai h1 {
@@ -92,7 +92,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.5rem; /* Squeezes the stars and text close together */
+  gap: 0.5rem;
 }
 
 .card-ai-rating img {
@@ -104,6 +104,53 @@ main {
   font-size: 18px;
   font-weight: 400;
   text-align: center;
+}
+
+.card-accounts {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+}
+
+.card-accounts img {
+  width: 100%;
+  height: auto;
+}
+
+.card-accounts p {
+font-size: 1.65rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+  letter-spacing: -1.8px;
+  color: var(--black);
+}
+
+.card-schedule {
+  background-color: var(--yellow-500);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 18px 18px 0 18px; /* Top, Right, Bottom (0), Left padding walls */
+  overflow: hidden; /* Slices the overflowing bottom image cleanly at the card radius */
+}
+
+.card-schedule p {
+    font-size: 1.65rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+  letter-spacing: -1.8px;
+  color: var(--black);
+}
+
+
+.card-schedule img {
+  width: 70%;
+  height: auto;
+
 }
 
 .attribution {
