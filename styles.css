@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 
-
 /* Color Palette System */
 :root {
   /* Primary Colors */
@@ -34,7 +33,23 @@ body {
   background: var(--bg-neutral);
   padding: 1rem;
   min-height: 100vh;
-  
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.bento-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem; 
+  width: 100%;
+  max-width: 28rem;
+
 }
 
 .attribution {
