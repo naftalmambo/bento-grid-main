@@ -183,7 +183,28 @@ main {
   opacity: 0.9;
 }
 
-.
+.card-grow-followers {
+  background-color: var(--purple-500);
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  padding: 18px 36px 24px 36px  ;
+}
+
+.card-grow-followers img {
+  width: 85%;
+  align-self: center;
+}
+
+.card-grow-followers p {
+  text-align: center;
+  color: var(--white);
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 0.8;
+  letter-spacing: -1px;
+
+}
 
 .attribution {
   font-size: 0.6875rem;
