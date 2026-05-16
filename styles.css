@@ -231,6 +231,36 @@ main {
   margin-bottom: 6px;
 }
 
+.card-create-quicker {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 32px;
+  background-color: var(--yellow-100);
+}
+
+.card-create-quicker h2 {
+  font-size: 32px;
+  color: var(--black);
+  font-weight: 500;
+  line-height: 0.8;
+  letter-spacing: -1.5px;
+}
+
+.quicker {
+  font-style: italic;
+  color: var(--purple-500);
+}
+
+.card-create-quicker img {
+  width: 68%;
+  height: auto;
+}
+
+.card-write-content {
+  
+}
+
 .attribution {
   font-size: 0.6875rem;
   text-align: center;
