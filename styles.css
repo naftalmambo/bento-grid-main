@@ -104,6 +104,8 @@ main {
   font-size: 18px;
   font-weight: 400;
   text-align: center;
+  color: var(--white);
+  opacity: 0.9;
 }
 
 .card-accounts {
@@ -164,9 +166,7 @@ main {
   font-size: 1.65rem;
   text-align: center;
   letter-spacing: -1.6px;
-
 }
-
 
 .card-post-timings img {
   width: 100%;
@@ -188,7 +188,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: 36px;
-  padding: 18px 36px 24px 36px  ;
+  padding: 18px 36px 24px 36px;
 }
 
 .card-grow-followers img {
@@ -203,7 +203,32 @@ main {
   font-size: 32px;
   line-height: 0.8;
   letter-spacing: -1px;
+}
 
+.card-growth-stat {
+  padding: 18px 24px;
+  background-color: var(--white);
+  color: var(--black);
+  display: flex;
+  flex-direction: column;
+}
+
+.card-growth-stat h2 {
+  font-weight: 500;
+  font-size: 45px;
+}
+
+.card-growth-stat p {
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--black);
+  opacity: 0.9;
+  margin-bottom: 24px;
+}
+
+.card-growth-stat img {
+  width: 62%;
+  margin-bottom: 6px;
 }
 
 .attribution {
