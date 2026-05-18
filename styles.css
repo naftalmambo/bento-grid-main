@@ -213,6 +213,25 @@ body {
   gap: 1rem;
 }
 
+.attribution {
+  font-size: 0.75rem;
+  text-align: center;
+  padding: 2rem 0;
+  color: var(--black); /* Uses your exact palette black */
+  opacity: 0.6;        /* Fades it down to a perfect gray naturally */
+  width: 100%;
+}
+
+.attribution a {
+  color: var(--purple-500); /* Uses your exact palette purple */
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.attribution a:hover {
+  text-decoration: underline;
+}
+
 @media (max-width: 1024px) {
   .bento-grid {
     grid-auto-rows: initial;
@@ -328,14 +347,6 @@ body {
 
 
 
-.attribution {
-  font-size: 0.6875rem;
-  text-align: center;
-}
-
-.attribution a {
-  color: hsl(228, 45%, 44%);
-}
 
  
 
