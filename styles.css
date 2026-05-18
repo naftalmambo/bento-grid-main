@@ -22,7 +22,6 @@
   box-sizing: border-box;
 }
 
-
 img {
   max-width: 100%;
   display: block;
@@ -31,7 +30,7 @@ img {
 body {
   background-color: #f2f2f2;
   display: grid;
-  font-family: "DM Sans", sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-size: 18px;
   line-height: 1;
   min-height: 100vh;
@@ -44,7 +43,7 @@ body {
 }
 
 .lg-text {
-  font-size: 2.75rem;
+  font-size: 2.8rem;
   font-weight: 400;
 }
 
@@ -62,20 +61,20 @@ body {
   max-width: 1440px;
   margin: 1rem;
   display: grid;
-  grid-auto-columns: 1fr;
-  grid-auto-rows: 54px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 75px;
   gap: 2rem;
   grid-template-areas:
-    "box1 box2 box2 box3"
-    "box1 box2 box2 box3"
-    "box1 box2 box2 box3"
-    "box1 box2 box2 box3"
-    "box1 box5 box6 box3"
-    "box4 box5 box6 box3"
-    "box4 box5 box6 box3"
-    "box4 box7 box8 box8"
-    "box4 box7 box8 box8"
-    "box4 box7 box8 box8";
+    'box1 box2 box2 box3'
+    'box1 box2 box2 box3'
+    'box1 box2 box2 box3'
+    'box1 box2 box2 box3'
+    'box1 box5 box6 box3'
+    'box4 box5 box6 box3'
+    'box4 box5 box6 box3'
+    'box4 box7 box8 box8'
+    'box4 box7 box8 box8'
+    'box4 box7 box8 box8';
 }
 
 .bento-grid .item {
@@ -219,7 +218,7 @@ body {
   text-align: center;
   padding: 2rem 0;
   color: var(--black); /* Uses your exact palette black */
-  opacity: 0.6;        /* Fades it down to a perfect gray naturally */
+  opacity: 0.6; /* Fades it down to a perfect gray naturally */
   width: 100%;
 }
 
@@ -233,32 +232,35 @@ body {
   text-decoration: underline;
 }
 
-/* 🚀 Triggers when a keyboard user tabs onto your links */
+/* 🚀 Triggers when a keyboard user tabs on the links */
 .attribution a:focus-visible {
   outline: 2px dashed var(--black); /* Draws a clear, sharp dashed boundary box */
-  outline-offset: 2px;                  /* Gives the boundary outline some breathing room */
+  outline-offset: 2px; /* Gives the boundary outline some breathing room */
 }
-
 
 @media (max-width: 1024px) {
   .bento-grid {
     grid-auto-rows: initial;
     grid-template-areas:
-      "box1 box1 box2 box2"
-      "box1 box1 box2 box2"
-      "box3 box3 box4 box4"
-      "box3 box3 box4 box4"
-      "box5 box5 box6 box6"
-      "box5 box5 box6 box6"
-      "box7 box7 box8 box8"
-      "box7 box7 box8 box8";
+      'box1 box1 box2 box2'
+      'box1 box1 box2 box2'
+      'box3 box3 box4 box4'
+      'box3 box3 box4 box4'
+      'box5 box5 box6 box6'
+      'box5 box5 box6 box6'
+      'box7 box7 box8 box8'
+      'box7 box7 box8 box8';
   }
 
   .bento-grid .item:nth-child(8) {
     grid-template-columns: 1fr;
   }
 
-  
+  .bento-grid .item:nth-child(8) img {
+    max-width: 85%;
+    height: auto;
+    object-fit: contain;
+  }
 }
 
 @media (max-width: 768px) {
@@ -268,15 +270,14 @@ body {
 
   .bento-grid {
     grid-template-areas:
-  
-      "box2"
-      "box5"
-      "box6"
-      "box3"
-      "box8"
-      "box7"
-      "box1"
-      "box4";
+      'box2'
+      'box5'
+      'box6'
+      'box3'
+      'box8'
+      'box7'
+      'box1'
+      'box4';
   }
 
   .bento-grid .item:nth-child(4),
@@ -327,47 +328,3 @@ body {
     margin-top: 6rem;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-  
-
-
-
-
-
- 
-
