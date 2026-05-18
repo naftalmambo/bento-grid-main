@@ -150,11 +150,11 @@ body {
 
 .bento-grid .item:nth-child(3) img {
   position: absolute;
-  height: 410px;
+  height: 380px;
   object-fit: cover;
   object-position: left;
   top: 150px;
-  left: 50px;
+  left: 4rem;
 }
 
 .bento-grid .item:nth-child(4) {
