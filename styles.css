@@ -31,7 +31,7 @@ img {
 body {
   background-color: #f2f2f2;
   display: grid;
-  font-family: "DM Sans";
+  font-family: "DM Sans", sans-serif;
   font-size: 18px;
   line-height: 1;
   min-height: 100vh;
@@ -39,7 +39,7 @@ body {
 }
 
 .xlg-text {
-  font-size: 4rem;
+  font-size: 4.2rem;
   font-weight: 500;
 }
 
@@ -231,6 +231,13 @@ body {
 .attribution a:hover {
   text-decoration: underline;
 }
+
+/* 🚀 Triggers when a keyboard user tabs onto your links */
+.attribution a:focus-visible {
+  outline: 2px dashed var(--black); /* Draws a clear, sharp dashed boundary box */
+  outline-offset: 2px;                  /* Gives the boundary outline some breathing room */
+}
+
 
 @media (max-width: 1024px) {
   .bento-grid {
