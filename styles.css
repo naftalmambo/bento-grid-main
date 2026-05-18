@@ -242,6 +242,10 @@ body {
 }
 
 @media (max-width: 1024px) {
+
+  body{
+    
+
   .bento-grid {
 
     grid-auto-rows: initial;
@@ -254,8 +258,7 @@ body {
       'box5 box5 box6 box6'
       'box7 box7 box8 box8'
       'box7 box7 box8 box8';
-       transform: scale(0.85);       /* Downscales the entire grid and content by 15% automatically */
-    transform-origin: top center; /* Keeps the grid pinned nicely to the top center of the webpage */
+   
   }
 
   .bento-grid .item:nth-child(8) {
@@ -267,7 +270,7 @@ body {
     height: auto;
     object-fit: contain;
   }
-
+}
 
 
 
