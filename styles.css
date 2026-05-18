@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 
-/* Color Palette System */
+/* ==========================================================================
+   1. COLOR PALETTE SYSTEM
+   ========================================================================== */
 :root {
   /* Primary Colors */
   --purple-100: hsl(254, 88%, 90%);
@@ -16,6 +18,9 @@
   --bg-neutral: hsl(0, 0%, 96%);
 }
 
+/* ==========================================================================
+   2. GLOBAL RESET & BASE SETTINGS
+   ========================================================================== */
 * {
   padding: 0;
   margin: 0;
@@ -31,42 +36,63 @@ body {
   background-color: #f2f2f2;
   display: grid;
   font-family: 'DM Sans', sans-serif;
-  font-size: 18px;
-  line-height: 1;
+  font-size: 18px; /* 🚀 FIXED: Set strictly back to 18px */
+  line-height: 1.1;
   min-height: 100vh;
-  place-content: center;
+  place-content: center; /* Keeps your chosen place-content layout engine */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
 
-.xlg-text {
-  font-size: 4.1rem;
+/* Proportional Typographic Hierarchies for 18px Base */
+.xxlg-text {
+  font-size: 3.8rem;
   font-weight: 500;
+  line-height: 0.9;
+}
+
+.xlg-text {
+  font-weight: 500;
+  font-size: 2.4rem;
+  line-height: 0.9;
+
+
+
 }
 
 .lg-text {
-  font-size: 2.8rem;
-  font-weight: 400;
-}
-
-.med-text {
-  font-size: 2.35rem;
+  font-size: 2.2rem;
   font-weight: 500;
+  letter-spacing: -1.8px;
+  line-height: 0.9;
 }
-
+.med-text {
+  font-size: 1.90rem;
+  font-weight: 500;
+  line-height: 0.8;
+  letter-spacing: -1.1px;
+  
+}
 .sm-text {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 400;
 }
 
+/* ==========================================================================
+   3. THE FLUID 85% VM DESKTOP BENTO GRID MATRIX
+   ========================================================================== */
 .bento-grid {
-  max-width: 1440px;
-  margin: 1rem;
+  max-width: 1120px;
+  margin: 0 auto; /* Keeps margin clear to prevent layout conflict with place-content */
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 75px;
-  gap: 2rem;
+
+  /* Splits exactly 85% of your available screen depth into 10 tracks to fit the VM window */
+  grid-template-rows: repeat(10, 1fr);
+  height: 100vh;
+  gap: 1.25rem;
+
   grid-template-areas:
     'box1 box2 box2 box3'
     'box1 box2 box2 box3'
@@ -80,170 +106,227 @@ body {
     'box4 box7 box8 box8';
 }
 
+/* Defensive containment wrapper rule */
 .bento-grid .item {
   border-radius: 0.5rem;
   overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 1.25rem;
+
 }
 
+/* ==========================================================================
+   4. ITEM ASSIGNMENTS, CARD PADDING & CONTENT DEFENSES
+   ========================================================================== */
+/* Box 1 */
 .bento-grid .item:nth-child(1) {
   background-color: var(--yellow-100);
-}
-
-.bento-grid .item:nth-child(2),
-.bento-grid .item:nth-child(8) {
-  background-color: var(--purple-500);
-  color: var(--white);
-}
-
-.bento-grid .item:nth-child(3) {
-  background-color: var(--purple-100);
-}
-
-.bento-grid .item:nth-child(4),
-.bento-grid .item:nth-child(6) {
-  background-color: var(--yellow-500);
-}
-
-.bento-grid .item:nth-child(5),
-.bento-grid .item:nth-child(7) {
-  background-color: var(--white);
-}
-
-.bento-grid .item:nth-child(1) {
   grid-area: box1;
-  padding: 6rem 2rem 0 2.5rem;
+  padding: 3rem 1.5rem 1.5rem 1.75rem; /* Balanced interior padding */
 }
-
 .bento-grid .item:nth-child(1) em {
   color: var(--purple-500);
 }
-
 .bento-grid .item:nth-child(1) img {
-  margin-top: 1rem;
+  max-height: 48%;
+  object-fit: contain;
 }
 
+/* Box 2 */
 .bento-grid .item:nth-child(2) {
+  background-color: var(--purple-500);
+  color: var(--white);
   grid-area: box2;
-  padding: 2rem;
+  padding: 1.5rem 2rem;
   text-align: center;
   font-weight: 500;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
+
 }
 
+.faster {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  flex-direction: column;
+}
 .bento-grid .item:nth-child(2) .emphasis {
   color: var(--yellow-500);
 }
-
 .bento-grid .item:nth-child(2) img {
-  width: 250px;
-  margin: 1rem 0 0.5rem;
+  width: 200px;
 }
 
+
+/* Box 3 */
 .bento-grid .item:nth-child(3) {
+  background-color: var(--purple-100);
   grid-area: box3;
-  padding: 2.75rem 2rem 2.5rem 2rem;
-  display: flex;
-  flex-direction: column;
+  padding: 2rem 1.5rem;
   justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
   position: relative;
 }
 
+.bento-grid .item:nth-child(3) p.sm-text {
+  margin-top: auto; 
+  padding-top: 13.5rem; /* This values handles the safe space cushion directly underneath the calendar illustration */
+}
+/* Box 3 Image */
+
+/* Box 3 Image */
 .bento-grid .item:nth-child(3) img {
+  /* 🚀 THE BOX 5 SYSTEM: Switched back to absolute positioning */
   position: absolute;
-  height: 350px;
-  object-fit: cover;
-  object-position: left;
-  top: 185px;
-  left: 2.5rem;
+  
+  /* 🚀 POSITIONING: Anchors it right below your top heading */
+  top: 115px; 
+  left: 1.5rem; 
+  
+  /* 🚀 THE BOX 5 CEILING SHATTER: Breaks the global 100% restriction limit */
+  max-width: none !important; 
+  
+  /* 🚀 THE SCALE ENGINE: Forces the image extra tall and wide so it shoots past the right border */
+  height: 55%; 
+  width: 150%; 
+  object-position: left top;
+  
 }
 
+/* Box 4 */
 .bento-grid .item:nth-child(4) {
+  background-color: var(--yellow-500);
   grid-area: box4;
-  padding: 1.75rem 2.25rem;
+  padding: 1.5rem 1.75rem;
+  justify-content: center;
 }
-
 .bento-grid .item:nth-child(4) p {
-  margin-bottom: 2rem;
+  margin-bottom: 0.75rem;
+}
+.bento-grid .item:nth-child(4) img {
+  width: 100%;
+  height: auto;
 }
 
+/* Box 5 */
 .bento-grid .item:nth-child(5) {
+  background-color: var(--white);
   grid-area: box5;
-  padding: 1rem 2rem;
+  padding: 1.25rem;
   position: relative;
+  justify-content: flex-end;
+  overflow: hidden;
 }
-
 .bento-grid .item:nth-child(5) p {
-  margin-top: 6rem;
+  margin-top: 1.25rem;
 }
 
 .bento-grid .item:nth-child(5) img {
   position: absolute;
+  top: 1.25rem;
+  left: 1.25rem; /* Aligns the left-hand edge flush with your card padding line */
+  
+  /* 🚀 THE CRITICAL OVERRIDES TO UPSCALE THE IMAGE */
+  max-width: none !important; /* Shatters the global 100% restriction ceiling */
+  width: 125%;                /* Forces the graphic to swell up cleanly past the container walls */
+  margin-bottom: 0;
 }
-
+/* Box 6 */
 .bento-grid .item:nth-child(6) {
+  background-color: var(--yellow-500);
   grid-area: box6;
   position: relative;
-  padding: 1rem 1.75rem;
+  padding: 1.25rem 1.5rem;
 }
-
 .bento-grid .item:nth-child(6) p {
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
+}
+.bento-grid .item:nth-child(6) img {
+  max-width: 80%;
+  object-fit: contain;
+  position: absolute;
+  top: 130px;
+  left: 27px;
 }
 
+/* Box 7 */
 .bento-grid .item:nth-child(7) {
+  background-color: var(--white);
   grid-area: box7;
-  padding: 1rem;
+  padding: 1.25rem;
+  justify-content: center;
 }
-
 .bento-grid .item:nth-child(7) span {
   display: block;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
-
 .bento-grid .item:nth-child(7) img {
-  margin-top: 1.5rem;
+  margin-top: 0.5rem;
+  width: 75%;
 }
 
+/* Box 8 */
 .bento-grid .item:nth-child(8) {
+  background-color: var(--purple-500);
+  color: var(--white);
   grid-area: box8;
-  padding: 2rem;
+  padding: 1.25rem 1.5rem;
   display: grid;
-  grid-template-columns: 1.75fr 2fr;
+  grid-template-columns: 1.2fr 2fr;
   align-items: center;
-  gap: 1rem;
+  gap: 1.25rem;
+}
+.bento-grid .item:nth-child(8) img {
+  max-width: none;
+  width: 110%;
+  height: auto;
+  object-fit: contain;
 }
 
+/* ==========================================================================
+   5. ACCESSIBLE ATTRIBUTION FOOTER
+   ========================================================================== */
 .attribution {
-  font-size: 0.75rem;
+  font-size: 0.6875rem;
   text-align: center;
-  padding: 2rem 0;
-  color: var(--black); /* Uses your exact palette black */
-  opacity: 0.6; /* Fades it down to a perfect gray naturally */
+  padding: 1.5rem 0 0.5rem 0;
+  color: var(--black);
+  opacity: 0.6;
   width: 100%;
 }
-
 .attribution a {
-  color: var(--purple-500); /* Uses your exact palette purple */
+  color: var(--purple-500);
   text-decoration: none;
   font-weight: 500;
 }
-
 .attribution a:hover {
   text-decoration: underline;
 }
-
-/* 🚀 Triggers when a keyboard user tabs on the links */
 .attribution a:focus-visible {
-  outline: 2px dashed var(--black); /* Draws a clear, sharp dashed boundary box */
-  outline-offset: 2px; /* Gives the boundary outline some breathing room */
+  outline: 2px dashed var(--black);
+  outline-offset: 2px;
 }
 
+/* ==========================================================================
+   6. TABLET BREAKPOINT (Media Area Mapping Layouts)
+   ========================================================================== */
 @media (max-width: 1024px) {
+  body {
+    padding: 2rem 1rem;
+  }
   .bento-grid {
+    height: auto;
     grid-auto-rows: initial;
+    grid-template-rows: auto;
+    gap: 1.5rem;
     grid-template-areas:
       'box1 box1 box2 box2'
       'box1 box1 box2 box2'
@@ -254,24 +337,26 @@ body {
       'box7 box7 box8 box8'
       'box7 box7 box8 box8';
   }
-
   .bento-grid .item:nth-child(8) {
     grid-template-columns: 1fr;
   }
-
-  .bento-grid .item:nth-child(8) img {
-    max-width: 85%;
-    height: auto;
-    object-fit: contain;
-  }
 }
 
+/* ==========================================================================
+   7. CLEAN & SOLID MOBILE BREAKPOINT (Under 768px Width)
+   ========================================================================== */
 @media (max-width: 768px) {
-  .bento-grid .item {
-    text-align: center;
+  body {
+    height: auto !important;
+    padding: 1.5rem 1rem !important;
+    display: block;
   }
 
   .bento-grid {
+    width: 100%;
+    height: auto !important;
+    grid-template-rows: auto !important;
+    gap: 1.5rem;
     grid-template-areas:
       'box2'
       'box5'
@@ -283,51 +368,71 @@ body {
       'box4';
   }
 
+  .bento-grid .item {
+    text-align: center;
+    padding: 2rem !important;
+    height: auto !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .bento-grid .item:nth-child(1),
   .bento-grid .item:nth-child(4),
   .bento-grid .item:nth-child(5),
   .bento-grid .item:nth-child(6),
   .bento-grid .item:nth-child(7) {
     text-align: left;
+    align-items: flex-start;
   }
 
-  .bento-grid .item:nth-child(1) {
-    padding: 2rem;
-    text-align: left;
+  .bento-grid .item img {
+    position: static !important;
+    width: 100% !important;
+    max-width: 250px !important;
+    height: auto !important;
+    margin: 1.25rem auto 0 auto !important;
   }
 
+  .bento-grid .item .lg-text {
+    font-size: 2.2rem !important;
+  }
+  .bento-grid .item .med-text {
+    font-size: 1.8rem !important;
+  }
   .bento-grid .item:nth-child(1) .lg-text {
-    font-size: 2.5rem;
+    font-size: 2.5rem !important;
   }
-
-  .bento-grid .item:nth-child(1) img {
-    width: 250px;
-  }
-
-  .bento-grid .item:nth-child(3) {
-    padding: 2.75rem 1rem 2.5rem 1rem;
-  }
-
   .bento-grid .item:nth-child(3) .lg-text {
-    font-size: 2.25rem;
+    font-size: 2.25rem !important;
   }
 
-  .bento-grid .item:nth-child(3) img {
-    margin: 1rem 0;
-    position: initial;
-    height: initial;
+  .bento-grid .item:nth-child(5) {
+    display: flex;
+    flex-direction: column;
   }
-
-  .bento-grid .item:nth-child(5) p {
-    margin-top: 10rem;
+  .bento-grid .item:nth-child(5) img {
+    order: -1;
+    margin: 0 auto 1.25rem auto !important;
   }
 
   .bento-grid .item:nth-child(8) {
-    padding: 1.5rem 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem 4rem !important;
   }
 }
 
 @media (max-width: 540px) {
+  body {
+    padding: 1rem 0.5rem !important;
+  }
+  .xlg-text {
+    font-size: 2.5rem !important;
+  }
   .bento-grid .item:nth-child(5) p {
-    margin-top: 6rem;
+    margin-top: 0;
   }
 }
