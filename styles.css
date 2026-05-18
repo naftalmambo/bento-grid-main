@@ -35,6 +35,9 @@ body {
   line-height: 1;
   min-height: 100vh;
   place-content: center;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 .xlg-text {
@@ -240,6 +243,7 @@ body {
 
 @media (max-width: 1024px) {
   .bento-grid {
+
     grid-auto-rows: initial;
     grid-template-areas:
       'box1 box1 box2 box2'
@@ -250,6 +254,8 @@ body {
       'box5 box5 box6 box6'
       'box7 box7 box8 box8'
       'box7 box7 box8 box8';
+       transform: scale(0.85);       /* Downscales the entire grid and content by 15% automatically */
+    transform-origin: top center; /* Keeps the grid pinned nicely to the top center of the webpage */
   }
 
   .bento-grid .item:nth-child(8) {
@@ -261,7 +267,9 @@ body {
     height: auto;
     object-fit: contain;
   }
-}
+
+
+
 
 @media (max-width: 768px) {
   .bento-grid .item {
