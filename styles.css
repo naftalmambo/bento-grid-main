@@ -156,7 +156,7 @@ body {
   height: 350px;
   object-fit: cover;
   object-position: left;
-  top: 175px;
+  top: 185px;
   left: 2.5rem;
 }
 
@@ -242,12 +242,7 @@ body {
 }
 
 @media (max-width: 1024px) {
-
-  body{
-    
-
   .bento-grid {
-
     grid-auto-rows: initial;
     grid-template-areas:
       'box1 box1 box2 box2'
@@ -258,7 +253,6 @@ body {
       'box5 box5 box6 box6'
       'box7 box7 box8 box8'
       'box7 box7 box8 box8';
-   
   }
 
   .bento-grid .item:nth-child(8) {
@@ -271,8 +265,6 @@ body {
     object-fit: contain;
   }
 }
-
-
 
 @media (max-width: 768px) {
   .bento-grid .item {
